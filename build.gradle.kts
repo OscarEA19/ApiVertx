@@ -1,4 +1,3 @@
-import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 import org.gradle.api.tasks.testing.logging.TestLogEvent.*
 
 plugins {
@@ -41,13 +40,13 @@ java {
   targetCompatibility = JavaVersion.VERSION_17
 }
 
-tasks.withType<ShadowJar> {
-  archiveClassifier.set("fat")
-  manifest {
-    attributes(mapOf("Main-Verticle" to mainVerticleName))
-  }
-  mergeServiceFiles()
-}
+//tasks.withType<ShadowJar> {
+//  archiveClassifier.set("fat")
+//  manifest {
+//    attributes(mapOf("Main-Verticle" to mainVerticleName))
+//  }
+//  mergeServiceFiles()
+//}
 
 tasks.withType<Test> {
   useJUnitPlatform()

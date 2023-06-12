@@ -6,10 +6,9 @@ import io.vertx.ext.web.Router;
 import io.vertx.ext.web.handler.BodyHandler;
 import io.vertx.mysqlclient.MySQLConnectOptions;
 import programacion.endpoints.UserEndpoints;
-import programacion.tasks.TaskCountPeople;
 import programacion.utils.MySqlUtil;
 
-import java.net.http.HttpResponse;
+
 
 public class MainVerticle extends AbstractVerticle {
   @Override
@@ -18,7 +17,6 @@ public class MainVerticle extends AbstractVerticle {
     router.route().handler(BodyHandler.create());
     MySQLConnectOptions connectOptions = MySqlUtil.getConnectionOptions();
     UserEndpoints.setupEndpoints(vertx, router, connectOptions);
-    TaskCountPeople.countPeople(vertx, connectOptions);
     vertx.createHttpServer()
       .requestHandler(router)
       .listen(8888)

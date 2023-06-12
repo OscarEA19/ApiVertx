@@ -63,7 +63,7 @@ set CMD_LINE_ARGS=%*
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\starter-1.0.0-SNAPSHOT-fat.jar
+set CLASSPATH=%APP_HOME%\lib\starter-1.0.0-SNAPSHOT-all.jar
 
 @rem Execute starter
 "%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %STARTER_OPTS%  -jar "%CLASSPATH%" %CMD_LINE_ARGS%

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="programacion.TestMainVerticle" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-06-10T15:28:59" hostname="LAPTOP-VM2AD03I" time="0.636">
+  <properties/>
+  <testcase name="verticle_deployed(Vertx, VertxTestContext)" classname="programacion.TestMainVerticle" time="0.636"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

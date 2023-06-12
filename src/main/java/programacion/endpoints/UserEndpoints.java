@@ -9,6 +9,7 @@ import io.vertx.ext.web.Router;
 import io.vertx.mysqlclient.MySQLConnectOptions;
 import programacion.model.User;
 import programacion.utils.MySqlUtil;
+import programacion.utils.ValidateToken;
 
 import java.io.DataInput;
 import java.util.Objects;
@@ -24,9 +25,11 @@ public class UserEndpoints {
                                     Router router,
                                     MySQLConnectOptions connectOptions) {
 
+
     router.get(API_USER)
       .produces("application/json")
       .handler(routingContext -> {
+        ValidateToken.validToken(routingContext);
         try {
           HttpServerRequest request = routingContext.request();
           String id = request.getParam("id");
@@ -43,6 +46,7 @@ public class UserEndpoints {
     router.post(API_USER)
       .produces("application/json")
       .handler(routingContext -> {
+        ValidateToken.validToken(routingContext);
         try {
           RequestBody requestBody = routingContext.body();
           String body = requestBody.asString();
@@ -55,6 +59,7 @@ public class UserEndpoints {
     router.put()
       .produces("application/json")
       .handler(routingContext -> {
+        ValidateToken.validToken(routingContext);
         try {
           RequestBody requestBody = routingContext.body();
           String body = requestBody.asString();
@@ -67,6 +72,7 @@ public class UserEndpoints {
     router.delete()
       .produces("application/json")
       .handler(routingContext -> {
+        ValidateToken.validToken(routingContext);
         try {
           HttpServerRequest request = routingContext.request();
           String id = request.getParam("id");
